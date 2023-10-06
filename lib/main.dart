@@ -1,14 +1,14 @@
 import 'dart:math';
-
+import 'pages/Forth_page.dart';
 import 'package:flutter/material.dart';
-
+import 'pages/fifth_page.dart';
+import 'pages/sixth_page.dart';
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -130,7 +131,7 @@ class ThirdPage extends StatelessWidget {
               child: InkWell(
                onTap: (){
                     Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => ForthPage ()),
+                    MaterialPageRoute(builder: (context) => Mypage ()),
                     );
                   },
          child:   Image.asset('assets/assets/pencil (2).jpg',),
@@ -155,431 +156,32 @@ class ThirdPage extends StatelessWidget {
   }
 }
 
-
-class ForthPage extends StatefulWidget {
-  const ForthPage({super.key});
+class Mypage extends StatefulWidget {
+  const Mypage({super.key});
 
   @override
-  State<ForthPage> createState() => _ForthPageState();
+  State<Mypage> createState() => _MypageState();
 }
 
-class _ForthPageState extends State<ForthPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-          color: Colors.white,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(50, 50, 50, 50),
-                  child: Align(
-                    alignment: Alignment.topRight ,
-                    child:Text(
-                    'Skip',
-                    style: TextStyle(color: Color.fromARGB(255, 106, 147, 181) , fontSize: 30.0 ),
-                    ),
-                  ),
-                ), 
-                Image.asset('assets/assets/cuate.png'),
-                Container(
-                  width: 40,
-                  height: 40,
-                  color: Colors.white,
-                ),
-Text(
-  'Write List',
-  style: TextStyle(color: Colors.black , fontSize: 40.0),
-
-  ),
-  Container(
-    width: 20,
-    height: 20,
-    color: Colors.white,
-  ),           
-  Text(
-    'Write your tasks in a list and',
-    style: TextStyle(color: Colors.grey[600] , fontSize: 20.0),
-  ),   
-  
-  Text(
-    'check them when done!',
-    style: TextStyle(color: Colors.grey[600] , fontSize: 20.0),
-  ),
-  Container(
-    width: 20,
-    height:20,
-    color: Colors.white,
-  ),
-  Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 124, 153, 177),
-                          borderRadius: BorderRadius.circular(20),
-),
-                      ),
-  Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-
-                        ),
-                      ),
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-                          ),
-                      ),
-                      Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                      
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-
-                        ),
-                        
-                      ),
-  
-  ]
-            ),
-          ),
-          Container(
-            width:20,
-            height: 20,
-            color: Colors.white,
-          ),
-              ],
-            ),
-          ),
-        ),
-         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color(0xff8BA8B5),
-      label:  SizedBox(
-        width: 500,
-        height: 100,
-
-        child: Center (
-                              child:Text(
-                                'Next',
-           style: TextStyle(color: Colors.white , fontSize: 30.0 ),
-                                ),
-                                ),
-      ),
-       
-      
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => FifthPage(),
-              ),
-              );
-        },
-      ),
-      );
-  
-              
-              
-}
-}
-class FifthPage extends StatelessWidget {
-  const FifthPage({super.key});
-
+class _MypageState extends State<Mypage> {
+  final PageController controller = PageController(
+    initialPage: 0,
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    body: Container(
-          color: Colors.white,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(50, 50, 50, 50),
-                  child: Align(
-                    alignment: Alignment.topRight ,
-                    child:Text(
-                    'Skip',
-                    style: TextStyle(color: Color.fromARGB(255, 106, 147, 181) , fontSize: 30.0 ),
-                    ),
-                  ),
-                ), 
-                Container(
-                  height: 250,
-                  width: 300,
-               child:   Image.asset('assets/assets/Women.png'),
-                ),
-               
-                Container(
-                  width: 40,
-                  height: 40,
-                  color: Colors.white,
-                ),
-Text(
-  'Stay Organized',
-  style: TextStyle(color: Colors.black , fontSize: 40.0),
-
-  ),
-  Container(
-    width: 20,
-    height: 20,
-    color: Colors.white,
-  ),           
-  Text(
-    'Group your tasks and keep',
-    style: TextStyle(color: Colors.grey[600] , fontSize: 20.0),
-  ),   
-  
-  Text(
-    'them organized',
-    style: TextStyle(color: Colors.grey[600] , fontSize: 20.0),
-  ),
-  Container(
-    width: 20,
-    height:20,
-    color: Colors.white,
-  ),
-  Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-),
-                      ),
-  Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-
-                        ),
-                      ),
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 124, 153, 177),
-                          borderRadius: BorderRadius.circular(20),
-                          ),
-                      ),
-                      Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                      
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-
-                        ),   
-                      ),
-  ],
-            ),
-          ),
-          Container(
-            width:20,
-            height: 20,
-            color: Colors.white,
-          ),
-              ],
-            ),
-          ),
-        ),
-         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color(0xff8BA8B5),
-      label:  SizedBox(
-        width: 500,
-        height: 100,
-
-        child: Center (
-                              child:Text(
-                                'Next',
-           style: TextStyle(color: Colors.white , fontSize: 30.0 ),
-                                ),
-                                ),
-      ),
-      
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SixsPage(),
-              ),
-              );
-        },
-      ),
-      );
-  
-  }
-}
-
-class  SixsPage extends StatelessWidget {
-  const  SixsPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-          color: Colors.white,
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                
-                Image.asset('assets/assets/image.png'),
-                Container(
-                  width: 40,
-                  height: 40,
-                  color: Colors.white,
-                ),
-Text(
-  'Check Progress',
-  style: TextStyle(color: Colors.black , fontSize: 40.0),
-
-  ),
-  Container(
-    width: 20,
-    height: 20,
-    color: Colors.white,
-  ),           
-  Text(
-    'See how much you have',
-    style: TextStyle(color: Colors.grey[600] , fontSize: 20.0),
-  ),   
-  
-  Text(
-    'done from your tasks',
-    style: TextStyle(color: Colors.grey[600] , fontSize: 20.0),
-  ),
-  Container(
-    width: 20,
-    height:20,
-    color: Colors.white,
-  ),
-  Center(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-),
-                      ),
-  Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-
-                        ),
-                      ),
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(20),
-                          ),
-                      ),
-                      Container(
-                        width: 10,
-                        height: 10,
-                         decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                      ),
-                      
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 124, 153, 177),
-                          borderRadius: BorderRadius.circular(20),
-
-                        ),
-                        
-                      ),
-  ]
-            ),
-          ),
-          Container(
-            width:20,
-            height: 20,
-            color: Colors.white,
-          ),
-              ],
-            ),
-          ),
-        ),
-         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-         floatingActionButton: FloatingActionButton.extended(
-          backgroundColor: Color(0xff8BA8B5),
-      label:  SizedBox(
-        width: 500,
-        height: 100,
-
-        child: Center (
-                              child:Text(
-                                'Let’s Start',
-           style: TextStyle(color: Colors.white , fontSize: 30.0 ),
-                                ),
-                                ),
-      ),
-       
-        onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => SeventhPage(),
-              ),
-              );
-        },
+      backgroundColor: Colors.white,
+      body: PageView( controller: controller,
+        children: [
+          ForthPage(),
+          FifthPage(),
+          SixsPage()
+        ],
       ),
     );
   }
 }
+
 class SeventhPage extends StatefulWidget {
   const SeventhPage({super.key});
 
